@@ -4,8 +4,7 @@ import numpy as np
 
 chat_id = 405993924 # Ваш chat ID, не меняйте название переменной
 
-def solution(...) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+def solution(x, y) -> bool:
+    significance_level = 0.07
+    pvalue = ttest_ind(x, y, equal_var=False, alternative='two-sided').pvalue
+    return pvalue < significance_level
